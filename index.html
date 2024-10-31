@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Romántica de Halloween</title>
+    <style>
+        /* Pantalla de inicio de sesión */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('ruta-a-imagen-de-rosas.jpg'); /* Fondo de rosas */
+            background-size: cover;
+            background-position: center;
+        }
+
+        #login {
+            background-color: rgba(139, 0, 0, 0.8); /* Rojo oscuro semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        #login input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            width: 80%;
+            margin-top: 10px;
+        }
+
+        #login button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            background-color: #8B0000;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #login button:hover {
+            background-color: #600000;
+        }
+
+        /* Ocultar el contenido principal antes de iniciar sesión */
+        #content {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Estilos de la galería de imágenes */
+        .gallery img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Inicio de sesión -->
+<div id="login">
+    <h2>Ingrese su clave</h2>
+    <input type="password" id="password" placeholder="Clave">
+    <button onclick="checkPassword()">Entrar</button>
+</div>
+
+<!-- Contenido principal que se muestra tras el inicio de sesión -->
+<div id="content">
+    <h2>Bienvenido a nuestra página especial de Halloween 🎃</h2>
+    <div class="gallery">
+        <!-- Añade las imágenes que desees -->
+        <img src="ruta-a-imagen1.jpg" alt="Imagen 1">
+        <img src="ruta-a-imagen2.jpg" alt="Imagen 2">
+        <!-- Más imágenes según prefieras -->
+    </div>
+    <audio id="music" controls autoplay loop>
+        <source src="ruta-a-tu-musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+</div>
+
+<script>
+    function checkPassword() {
+        const password = document.getElementById("password").value;
+        if (password === "miau") {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            document.getElementById("music").play(); // Inicia la música
+        } else {
+            alert("Clave incorrecta, intenta de nuevo.");
+        }
+    }
+</script>
+
+</body>
+</html>
